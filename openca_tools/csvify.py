@@ -80,6 +80,7 @@ def create_csv_file_from_sdmx_xml_file(
     input_fp: Path, output_fp: Path, header: List[str]
 ) -> dict:
     lines_written = 0
+    null_values = 0
     try:
         output_file = open(output_fp, 'a')
         output_file.truncate(0)
@@ -97,10 +98,14 @@ def create_csv_file_from_sdmx_xml_file(
                     if search:
                         data['OBS_VALUE'] = search.group(1)
                 elif '</generic:Series>' in line:
+                    if 'OBS_VALUE' not in data:
+                        data['OBS_VALUE'] = ''
+                        null_values += 1
                     csv_line = ','.join(data[_] for _ in header)
                     _ = output_file.write(csv_line + '\n')
                     lines_written += 1
                     data = {}
     finally:
         output_file.close()
-    return {'filename': output_fp.name, 'lines': lines_written}
+    return {'filename': output_fp.name, 'lines': lines_written,
+            'null_values': null_values}
