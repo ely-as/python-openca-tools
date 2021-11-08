@@ -1,5 +1,7 @@
 # python-openca-tools
 
+[![Test](https://github.com/ely-as/python-openca-tools/actions/workflows/test.yml/badge.svg)](https://github.com/ely-as/python-openca-tools/actions/workflows/test.yml)
+
 Python client and command-line tool for processing
 [Open Government Canada](https://open.canada.ca/en) datasets.
 
