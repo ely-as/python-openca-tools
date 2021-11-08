@@ -22,7 +22,9 @@ def create(input_fp: Path) -> None:
     if not structure_fp.exists():
         raise FileNotFoundError(f"Could not find file {structure_fp.name}")
     # Output filepaths
-    dataset_name = input_fp.name.lstrip('Generic_').rstrip('.xml')
+    dataset_name = (
+        input_fp.name.replace('Generic_', '').replace('.xml', '')
+    )
     output_csv_fp = input_fp.parent / f'{dataset_name}.csv'
     output_json_fp = input_fp.parent / f'{dataset_name}.json'
     # Process files
