@@ -59,7 +59,7 @@ class Command(object):
         self.parser.print_help()
 
 
-class CollectionCommand(Command):
+class CsvifyCommand(Command):
     command = 'csvify'
 
     def add_arguments(self) -> None:
