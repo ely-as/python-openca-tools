@@ -1,6 +1,8 @@
 # python-openca-tools
 
 [![Test](https://github.com/ely-as/python-openca-tools/actions/workflows/test.yml/badge.svg)](https://github.com/ely-as/python-openca-tools/actions/workflows/test.yml)
+![Python](https://img.shields.io/badge/python-3.6%20|%203.7%20|%203.8%20|%203.9%20|%203.10-informational)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 Python client and command-line tool for processing
 [Open Government Canada](https://open.canada.ca/en) datasets.
